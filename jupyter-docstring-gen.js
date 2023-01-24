@@ -1,7 +1,7 @@
 define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
     'use strict';
 
-    var mod_name = 'jupyter-black';
+    var mod_name = 'jupyter-docstring-gen';
 
     // gives default settings
     var cfg = {
@@ -12,9 +12,9 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
         },
         register_hotkey: true,
         show_alerts_for_errors: true,
-        button_label: 'Black',
-        button_icon: 'fa-legal',
-        kbd_shortcut_text: 'Black',
+        button_label: 'Docstring-Gen',
+        button_icon: 'fa-file',
+        kbd_shortcut_text: 'Docstring-Gen',
     };
 
     cfg.kernel_config_map = { // map of parameters for supported kernels
