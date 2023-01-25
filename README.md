@@ -5,7 +5,7 @@ This extension uses <a href = "https://docstring-gen.airt.ai/" target="_blank">d
 **Requirements**: The following packages must be installed prior to proceeding:
 
 ```bash
-pip install docstring-gen black [--user]
+pip install docstring-gen black
 ```
 
 **Note**: The **docstring-gen** library uses OpenAI’s Codex model to generate docstrings for your Python classes and functions. In order to use this extension, you’ll need to <a href="https://beta.openai.com/account/api-keys" target = "_blank">create an API key for OpenAI.</a> Once you have your API key, store it in the OPENAI_API_KEY environment variable. This is a necessary step for the extension to work.
