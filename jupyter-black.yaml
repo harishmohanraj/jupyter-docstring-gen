@@ -1,16 +1,16 @@
 Type: IPython Notebook Extension
-Name: jupyter-docstring-gen
-Description: Use docstring-gen to add missing docstrings to Python code cells
+Name: Jupyter Docstring Generator
+Description: Use Black to reformat/prettify Python code cells
 Link: README.md
-Main: main.js
+Main: jupyter-docstring-gen.js
 Compatibility: Jupyter 4.x, 5.x
 Parameters:
-- name: main.add_toolbar_button
+- name: jupyter-docstring-gen.add_toolbar_button
   description: Add a toolbar button to prettify the selected cell(s)
   input_type: checkbox
   default: true
 
-- name: main.button_icon
+- name: jupyter-docstring-gen.button_icon
   description: |
     Toolbar button icon: a font-awesome class defining the icon used for the
     toolbar button and actions.
@@ -18,39 +18,39 @@ Parameters:
   input_type: text
   default: 'fa-file'
 
-- name: main.button_label
+- name: jupyter-docstring-gen.button_label
   description: Toolbar button label text
   input_type: text
-  default: 'Docstring-Gen'
+  default: 'docstring-gen'
 
-- name: main.register_hotkey
+- name: jupyter-docstring-gen.register_hotkey
   description: |
     Register hotkeys to prettify the selected code cell(s), or all code cells
     in the notebook
   input_type: checkbox
   default: true
 
-- name: main.hotkeys.process_selected
+- name: jupyter-docstring-gen.hotkeys.process_selected
   description: Hotkey to use to prettify the selected cell(s)
   input_type: hotkey
   default: 'Ctrl-B'
 
-- name: main.hotkeys.process_all
+- name: jupyter-docstring-gen.hotkeys.process_all
   description: Hotkey to use to prettify the whole notebook
   input_type: hotkey
   default: 'Ctrl-Shift-B'
 
-- name: main.show_alerts_for_not_supported_kernel
+- name: jupyter-docstring-gen.show_alerts_for_not_supported_kernel
   description: Show alerts if the kernel is not supported
   input_type: checkbox
   default: false
 
-- name: main.show_alerts_for_errors
+- name: jupyter-docstring-gen.show_alerts_for_errors
   description: Show alerts for errors in the kernel prettifying calls
   input_type: checkbox
   default: true
 
-- name: main.kernel_config_map_json
+- name: jupyter-docstring-gen.kernel_config_map_json
   description: |
     json defining library calls required to load the kernel-specific
     prettifying modules, and the prefix & postfix for the json-format string

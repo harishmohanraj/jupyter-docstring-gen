@@ -12,9 +12,9 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
         },
         register_hotkey: true,
         show_alerts_for_errors: true,
-        button_label: 'Docstring-Gen',
+        button_label: 'docstring-gen',
         button_icon: 'fa-file',
-        kbd_shortcut_text: 'Docstring-Gen',
+        kbd_shortcut_text: 'docstring-gen',
     };
 
     cfg.kernel_config_map = { // map of parameters for supported kernels

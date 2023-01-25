@@ -1,8 +1,6 @@
-# Jupyter Black [Black formatter for Jupyter Notebook]
+# Jupyter Docstring Generator [Black formatter for Jupyter Notebook]
 
 This extension reformats/prettifies code in a notebook's code cell by [black](https://black.readthedocs.io/en/stable/). 
-
-![demo](demo.gif)
 
 **pre-requisites:** of course, you must have some of the corresponding packages installed:
 
@@ -25,6 +23,6 @@ If you use [jupyter-contrib-nbextensions](https://github.com/ipython-contrib/jup
 Otherwise, you can still install/try the extension from personal repo, using
 
 ```bash
-jupyter nbextension install https://github.com/drillan/jupyter-black/archive/master.zip --user
-jupyter nbextension enable jupyter-black-master/jupyter-black
+jupyter nbextension install https://github.com/drillan/jupyter-docstring-gen/archive/master.zip --user
+jupyter nbextension enable jupyter-docstring-gen-master/jupyter-docstring-gen
 ```

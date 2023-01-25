@@ -42,7 +42,7 @@ define([
             show_alerts_for_errors: true,
             show_alerts_for_not_supported_kernel: false,
             button_icon: 'fa-file',
-            button_label: 'Docstring-Gen',
+            button_label: 'docstring-gen',
             kbd_shortcut_text: mod_name,
             kernel_config_map: {},
             actions: null, // to be filled by register_actions
