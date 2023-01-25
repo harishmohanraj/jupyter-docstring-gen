@@ -8,7 +8,7 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
         add_toolbar_button: true,
         hotkeys: {
             process_selected: 'Ctrl-D',
-            process_all: 'Ctrl-Shift-D',
+            process_all: 'Ctrl-Alt-D',
         },
         register_hotkey: true,
         show_alerts_for_errors: true,
