@@ -33,12 +33,12 @@ Parameters:
 - name: jupyter-docstring-gen.hotkeys.process_selected
   description: Hotkey to use to add docstring to the selected cell(s)
   input_type: hotkey
-  default: 'Ctrl-D'
+  default: 'Ctrl-G'
 
 - name: jupyter-docstring-gen.hotkeys.process_all
   description: Hotkey to use to add docstring to the whole notebook
   input_type: hotkey
-  default: 'Ctrl-Alt-D'
+  default: 'Ctrl-Shift-G'
 
 - name: jupyter-docstring-gen.show_alerts_for_not_supported_kernel
   description: Show alerts if the kernel is not supported
@@ -59,7 +59,7 @@ Parameters:
   default: |
     {
       "python": {
-        "library": "import json\ndef generate_docstring(cell_text):\n    import black\n    from docstring_gen.docstring_generator import _check_and_add_docstrings_to_source\n    import re\n    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)\n    reformated_text = black.format_str(cell_text, mode=black.FileMode()),\n    text_with_docstring = _check_and_add_docstrings_to_source(source = reformated_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3, frequency_penalty=0.0, presence_penalty=0.0, stop=['#', '\"\"\"'])\n    return re.sub('^#%#', '%', text_with_docstring, flags=re.M)",
+        "library": "import json\ndef generate_docstring(cell_text):\n    from docstring_gen.docstring_generator import _check_and_add_docstrings_to_source\n    import re\n    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)\n    text_with_docstring = _check_and_add_docstrings_to_source(source = cell_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3, frequency_penalty=0.0, presence_penalty=0.0, stop=['#', '\"\"\"'])\n    return re.sub('^#%#', '%', text_with_docstring, flags=re.M)",
         "prefix": "print(json.dumps(generate_docstring(u",
         "postfix": ")))"
       },

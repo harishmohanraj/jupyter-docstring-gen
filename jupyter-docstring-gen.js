@@ -7,8 +7,8 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
     var cfg = {
         add_toolbar_button: true,
         hotkeys: {
-            process_selected: 'Ctrl-D',
-            process_all: 'Ctrl-Alt-D',
+            process_selected: 'Ctrl-G',
+            process_all: 'Ctrl-Shift-G',
         },
         register_hotkey: true,
         show_alerts_for_errors: true,
@@ -28,12 +28,10 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
         "python": {
             "library": ["import json",
             "def generate_docstring(cell_text):",
-            "    import black", 
             "    from docstring_gen.docstring_generator import _check_and_add_docstrings_to_source",
             "    import re",
             "    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)",
-            "    reformated_text = black.format_str(cell_text, mode=black.FileMode())",
-            "    text_with_docstring = _check_and_add_docstrings_to_source(source = reformated_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3, frequency_penalty=0.0, presence_penalty=0.0, stop=['#', '\"\"\"'])",
+            "    text_with_docstring = _check_and_add_docstrings_to_source(source = cell_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3, frequency_penalty=0.0, presence_penalty=0.0, stop=['#', '\"\"\"'])",
             "    return re.sub('^#%#', '%', text_with_docstring, flags=re.M)"].join("\n"),
             "prefix": "print(json.dumps(generate_docstring(u",
             "postfix": ")))"

@@ -5,7 +5,7 @@ This extension uses <a href = "https://docstring-gen.airt.ai/" target="_blank">d
 **Requirements**: The following packages must be installed prior to proceeding:
 
 ```bash
-pip install docstring-gen black
+pip install docstring-gen
 ```
 
 **Note**: The **docstring-gen** library uses OpenAI’s Codex model to generate docstrings for your Python classes and functions. In order to use this extension, you’ll need to <a href="https://beta.openai.com/account/api-keys" target = "_blank">create an API key for OpenAI.</a> Once you have your API key, store it in the OPENAI_API_KEY environment variable. This is a necessary step for the extension to work.
@@ -13,8 +13,8 @@ pip install docstring-gen black
 Then the extension provides
 
 - a toolbar button
-- a keyboard shortcut for generating docstring for the current code-cell (default: Ctrl-D)
-- a keyboard shortcut for generating docstring for whole code-cells (default: Ctrl-Alt-D)
+- a keyboard shortcut for generating docstring for the current code-cell (default: Ctrl-G)
+- a keyboard shortcut for generating docstring for whole code-cells (default: Ctrl-Shift-G)
 
 
 ## Installation
