@@ -1,12 +1,12 @@
 Type: IPython Notebook Extension
 Name: Jupyter Docstring Generator
-Description: Use Black to reformat/prettify Python code cells
+Description: Use docstring-gen to instantly improve the documentation of your Python code
 Link: README.md
 Main: jupyter-docstring-gen.js
 Compatibility: Jupyter 4.x, 5.x
 Parameters:
 - name: jupyter-docstring-gen.add_toolbar_button
-  description: Add a toolbar button to prettify the selected cell(s)
+  description: Add a toolbar button to add docstring to the selected cell(s)
   input_type: checkbox
   default: true
 
@@ -16,29 +16,29 @@ Parameters:
     toolbar button and actions.
     See https://fontawesome.com/icons for available icons.
   input_type: text
-  default: 'fa-heart'
+  default: 'fa-pencil' 
 
 - name: jupyter-docstring-gen.button_label
   description: Toolbar button label text
   input_type: text
-  default: 'docstring-gen'
+  default: 'Add docstring'
 
 - name: jupyter-docstring-gen.register_hotkey
   description: |
-    Register hotkeys to prettify the selected code cell(s), or all code cells
+    Register hotkeys to add docstring to the selected code cell(s), or all code cells
     in the notebook
   input_type: checkbox
   default: true
 
 - name: jupyter-docstring-gen.hotkeys.process_selected
-  description: Hotkey to use to prettify the selected cell(s)
+  description: Hotkey to use to add docstring to the selected cell(s)
   input_type: hotkey
-  default: 'Ctrl-B'
+  default: 'Ctrl-D'
 
 - name: jupyter-docstring-gen.hotkeys.process_all
-  description: Hotkey to use to prettify the whole notebook
+  description: Hotkey to use to add docstring to the whole notebook
   input_type: hotkey
-  default: 'Ctrl-Shift-B'
+  default: 'Ctrl-Shift-D'
 
 - name: jupyter-docstring-gen.show_alerts_for_not_supported_kernel
   description: Show alerts if the kernel is not supported

@@ -2,33 +2,26 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
     'use strict';
 
     var mod_name = 'jupyter-docstring-gen';
-    var include_auto_gen_txt = true;
-    var recreate_auto_gen_docs = true;
-    var model = 'code-davinci-002';
-    var temperature = 0.2;
-    var max_tokens = 250;
-    var top_p = 1.0;
-    var n = 3;
 
     // gives default settings
     var cfg = {
         add_toolbar_button: true,
         hotkeys: {
-            process_selected: 'Ctrl-B',
-            process_all: 'Ctrl-Shift-B',
+            process_selected: 'Ctrl-D',
+            process_all: 'Ctrl-Shift-D',
         },
         register_hotkey: true,
         show_alerts_for_errors: true,
-        button_label: 'docstring-gen',
-        button_icon: 'fa-heart',
+        button_label: 'Add docstring',
+        button_icon: 'fa-pencil',
         kbd_shortcut_text: 'docstring-gen',
-        include_auto_gen_txt: include_auto_gen_txt,
-        recreate_auto_gen_docs: recreate_auto_gen_docs,
-        model: model,
-        temperature: temperature,
-        max_tokens: max_tokens,
-        top_p: top_p,
-        n: n
+        include_auto_gen_txt: true,
+        recreate_auto_gen_docs: true,
+        model: 'code-davinci-002',
+        temperature: 0.2,
+        max_tokens: 250,
+        top_p: 1.0,
+        n: 3
     };
 
     cfg.kernel_config_map = { // map of parameters for supported kernels
