@@ -16,7 +16,7 @@ Parameters:
     toolbar button and actions.
     See https://fontawesome.com/icons for available icons.
   input_type: text
-  default: 'fa-file'
+  default: 'fa-heart'
 
 - name: jupyter-docstring-gen.button_label
   description: Toolbar button label text
@@ -59,8 +59,8 @@ Parameters:
   default: |
     {
       "python": {
-        "library": "import json\ndef black_reformat(cell_text):\n    import black\n    import re\n    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)\n    reformated_text = black.format_str(cell_text, mode=black.FileMode())\n    return re.sub('^#%#', '%', reformated_text, flags=re.M)",
-        "prefix": "print(json.dumps(black_reformat(u",
+        "library": "import json\ndef generate_docstring(cell_text):\n    import black\n    from docstring_gen.docstring_generator import _check_and_add_docstrings_to_source\n    import re\n    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)\n    reformated_text = black.format_str(cell_text, mode=black.FileMode()),\n    text_with_docstring = _check_and_add_docstrings_to_source(source = reformated_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3)\n    return re.sub('^#%#', '%', text_with_docstring, flags=re.M)",
+        "prefix": "print(json.dumps(generate_docstring(u",
         "postfix": ")))"
       },
       "javascript": {

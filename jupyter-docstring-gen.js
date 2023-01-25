@@ -2,6 +2,13 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
     'use strict';
 
     var mod_name = 'jupyter-docstring-gen';
+    var include_auto_gen_txt = true;
+    var recreate_auto_gen_docs = true;
+    var model = 'code-davinci-002';
+    var temperature = 0.2;
+    var max_tokens = 250;
+    var top_p = 1.0;
+    var n = 3;
 
     // gives default settings
     var cfg = {
@@ -13,20 +20,29 @@ define(['./kernel_exec_on_cell'], function(kernel_exec_on_cell) {
         register_hotkey: true,
         show_alerts_for_errors: true,
         button_label: 'docstring-gen',
-        button_icon: 'fa-file',
+        button_icon: 'fa-heart',
         kbd_shortcut_text: 'docstring-gen',
+        include_auto_gen_txt: include_auto_gen_txt,
+        recreate_auto_gen_docs: recreate_auto_gen_docs,
+        model: model,
+        temperature: temperature,
+        max_tokens: max_tokens,
+        top_p: top_p,
+        n: n
     };
 
     cfg.kernel_config_map = { // map of parameters for supported kernels
         "python": {
             "library": ["import json",
-            "def black_reformat(cell_text):", 
-            "    import black",
+            "def generate_docstring(cell_text):",
+            "    import black", 
+            "    from docstring_gen.docstring_generator import _check_and_add_docstrings_to_source",
             "    import re",
             "    cell_text = re.sub('^%', '#%#', cell_text, flags=re.M)",
             "    reformated_text = black.format_str(cell_text, mode=black.FileMode())",
-            "    return re.sub('^#%#', '%', reformated_text, flags=re.M)"].join("\n"),
-            "prefix": "print(json.dumps(black_reformat(u",
+            "    text_with_docstring = _check_and_add_docstrings_to_source(source = reformated_text, include_auto_gen_txt=True, recreate_auto_gen_docs=True, model='code-davinci-002', temperature=0.2, max_tokens=250, top_p=1.0, n=3)",
+            "    return re.sub('^#%#', '%', text_with_docstring, flags=re.M)"].join("\n"),
+            "prefix": "print(json.dumps(generate_docstring(u",
             "postfix": ")))"
         },
         "javascript": {
